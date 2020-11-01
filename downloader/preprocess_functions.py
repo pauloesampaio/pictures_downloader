@@ -199,6 +199,7 @@ def download_preprocess_requirements(**kwargs):
 def process_image(
     image,
     face_detection_model_path,
+    face_detection_model_url,
     face_detection_pad,
     resize_max_side,
     trim_initial_variance,
