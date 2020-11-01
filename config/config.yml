@@ -1,0 +1,21 @@
+url_source: "mongodb" # mongodb or local
+credentials_path: "credentials/credentials.json" # path for your mongodb credentials
+local_url_source_file: "download_list.csv" #, csv file on the format "url, save_path"
+
+download_folder: "pictures" # Folder were pictures will be saved
+run_preprocess_pipeline: True # If you wish to run a preprocessing pipeline, defined on the preprocess functions
+store_unprocessed_images: False # If you want to store the raw image, before preprocessing
+unprocessed_folder: "raw" # If you set true the parameter above, the folder where the unprocessed would be stored
+
+preprocess_config: # configuration of your preprocessing function
+  face_detection_model_path: "model"
+  face_detection_model_url:
+    [
+      "https://raw.githubusercontent.com/opencv/opencv_3rdparty/dnn_samples_face_detector_20180220_uint8/opencv_face_detector_uint8.pb",
+      "https://raw.githubusercontent.com/opencv/opencv/master/samples/dnn/face_detector/opencv_face_detector.pbtxt",
+    ]
+  face_detection_pad: 15
+  resize_max_side: 448
+  trim_initial_variance: 250
+  trim_delta_variance: 25
+  trim_min_area_pct: .25
