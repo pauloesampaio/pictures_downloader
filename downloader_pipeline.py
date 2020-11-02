@@ -22,7 +22,9 @@ class DownloadingPipeline(FlowSpec):
         """
         from downloader.utils import load_credentials
 
-        self.credentials = load_credentials(self.config["credentials_path"])
+        if self.config["url_source"] == "mongodb":
+            self.credentials = load_credentials(self.config["credentials_path"])
+
         self.next(self.get_download_list)
 
     @step
